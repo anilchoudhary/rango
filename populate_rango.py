@@ -17,24 +17,32 @@ def populate():
 
     python_pages = [
         {"title": "Official Python Tutorial",
+         "views": "1281",
          "url": "http://docs.python.org/2/tutorial/"},
         {"title": "How to Think like a Computer Scientist",
+         "views": "12",
          "url": "http://www.greenteapress.com/thinkpython/"},
         {"title": "Learn Python in 10 Minutes",
+         "views": "155",
          "url": "http://www.korokithakis.net/tutorials/python/"}]
 
     django_pages = [
         {"title": "Official Django Tutorial",
+         "views": "143",
          "url": "https://docs.djangoproject.com/en/1.9/intro/tutorial01/"},
         {"title": "Django Rocks",
+         "views": "100",
          "url": "http://www.djangorocks.com/"},
         {"title": "How to Tango with Django",
+         "views": "200",
          "url": "http://www.tangowithdjango.com/"}]
 
     other_pages = [
         {"title": "Bottle",
+         "views": "196",
          "url": "http://bottlepy.org/docs/dev/"},
         {"title": "Flask",
+         "views": "134",
          "url": "http://flask.pocoo.org"}]
 
     cats = {"Python": {"pages": python_pages,
@@ -59,7 +67,7 @@ def populate():
     for cat, cat_data in cats.items():
         c = add_cat(cat, cat_data["views"], cat_data["likes"])
         for p in cat_data["pages"]:
-            add_page(c, p["title"], p["url"])
+            add_page(c, p["title"], p["url"], p['views'])
 
     # Print out the categories we have added.
     for c in Category.objects.all():
@@ -81,7 +89,6 @@ def add_cat(name, views=0, likes=0):
     c.likes = likes
     c.save()
     return c
-
 
     # Start execution here!
 if __name__ == '__main__':

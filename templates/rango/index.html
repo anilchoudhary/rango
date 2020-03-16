@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Index</title>
-</head>
-<body>
-	<h1>Rango, THis is index page!</h1>
-	{{bold_message}}
-	<a href="/rango/about/">About</a><br /> <br>
-	<img src="{% static "images/pic.jpg" %}" alt="rango_pic">
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Rango</title>
+	</head>
+	<body>
+		<h1>Most Liked Categories</h1>
+		<div>
+			{% if categories %}
+				<ul>
+					{% for category in categories %}
+						<li>
+							<a href="/rango/category/{{ category.slug }}">{{ category.name }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			{% else %}
+				<b>There are no categories present.</b>
+			{% endif %}
+		</div>
+		
+		<h1>Most Viewed Pages</h1>
+		<div>
+			{% if pages %}
+				<ul>
+					{% for page in pages %}
+						<li>
+							<a href="{{ page.url }}">{{ page.title }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			{% else %}
+				<b>There are no pages present.</b>
+			{% endif %}
+		</div>
+
+		<div>
+			<a href="/rango/about/">About</a><br /> <br>
+			<img src="{% static "images/pic.jpg" %}" alt="rango_pic">
+		</div>
+		
+	</body>
 </html>
