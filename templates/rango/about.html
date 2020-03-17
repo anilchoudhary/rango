@@ -1,14 +1,13 @@
 <!DOCTYPE html>
+{% extends 'rango/base.html' %}
 {% load static %}
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Rango</title>
-</head>
-<body>
+{% block title_block %}
+	About
+{% endblock %}
+
+{% block body_block %}
 	<h1>this is an about page...by</h1>
 	{{ name }} <br>
 	<img src="{{ MEDIA_URL }}pantry.jpg" alt="media_pic">
 
-</body>
-</html>
+{% endblock %}
