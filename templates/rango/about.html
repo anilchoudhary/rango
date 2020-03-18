@@ -4,10 +4,11 @@
 {% block title_block %}
 	About
 {% endblock %}
-
 {% block body_block %}
-	<h1>this is an about page...by</h1>
-	{{ name }} <br>
+	<h1>Rango says...</h1>
+	<div>
+		here is the about page. <br />
+		<p>Visits: {{ visits }}</p>
+	</div>
 	<img src="{{ MEDIA_URL }}pantry.jpg" alt="media_pic">
-
 {% endblock %}
