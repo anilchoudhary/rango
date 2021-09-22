@@ -5,7 +5,7 @@ cffi==1.14.0
 chardet==3.0.4
 colorama==0.4.3
 confusable-homoglyphs==3.2.0
-Django==3.0.4
+Django==3.1.13
 django-registration==2.4.1
 django-registration-redux==2.7
 Faker==4.0.1
